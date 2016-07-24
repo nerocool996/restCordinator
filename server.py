@@ -74,7 +74,7 @@ def going():
 def login():
 	state = ''.join(random.choice(string.ascii_uppercase+string.digits) for x in xrange(32))
 	login_session['state'] = state
-	parm = {'client_id':CLIENT_DATA['client_id'],'redirect_uri':'http://localhost:5000/oauth/gitLogin','scope':'user','state':state}
+	parm = {'client_id':CLIENT_DATA['client_id'],'redirect_uri':'https://rest-cordinator.herokuapp.com/oauth/gitLogin','scope':'user','state':state}
 	url = 'https://github.com/login/oauth/authorize?'
 	return redirect(url+urllib.urlencode(parm))
 
